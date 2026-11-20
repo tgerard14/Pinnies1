@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PINNIES — Botanical Enamel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="studio-bg" aria-hidden="true">
+    <div class="sun-bloom bloom-1"></div>
+    <div class="sun-bloom bloom-2"></div>
+    <div class="botanical-grid"></div>
+  </div>
+
+  <!-- Top Banner -->
+  <header class="topbar">
+    <div class="brand-lockup">
+      <div class="brand-wordmark">PINNIES</div>
+      <span class="brand-sub">Botanical Enamel</span>
+    </div>
+    <div class="topbar-actions">
+      <button id="btnOpenChecklist" class="pill-btn pill-cream" type="button">
+        <span>Checklist</span>
+        <strong id="checklistCount">0 / 60</strong>
+      </button>
+      <button id="btnOpenBoard" class="pill-btn pill-gold" type="button">
+        <span>My Board</span>
+        <strong id="boardCount">0</strong>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Stage -->
+  <main class="stage">
+    <!-- PHASE 1: DIE-CUT HOLO FOIL BLIND BAG -->
+    <section id="bagStage" class="bag-stage" aria-label="Blind Bag">
+      <div id="pouchWrapper" class="pouch-wrapper">
+        <!-- Tear-off Top Cap -->
+        <div id="pouchCap" class="pouch-cap">
+          <div class="holo-foil"></div>
+          <div class="holo-glare"></div>
+          <div class="hang-hole"></div>
+          <div class="crimp-top"></div>
+        </div>
+
+        <!-- Perforated Tear Strip -->
+        <div id="tearStrip" class="tear-strip" role="slider" aria-label="Slide to rip holographic seal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+          <div class="tear-track">
+            <div id="tearFill" class="tear-fill"></div>
+            <span class="tear-prompt">SLIDE TO RIP HOLO SEAL ➔</span>
+          </div>
+          <div id="tearHandle" class="tear-handle" title="Drag across to rip">✂</div>
+        </div>
+
+        <!-- Pouch Lower Body -->
+        <div id="pouchBody" class="pouch-body">
+          <div class="holo-foil"></div>
+          <div class="holo-glare"></div>
+          <div class="crimp-side crimp-left"></div>
+          <div class="crimp-side crimp-right"></div>
+
+          <div class="pouch-emblem">
+            <svg class="terp-drop" viewBox="0 0 64 64" width="44" height="44" aria-hidden="true">
+              <defs>
+                <linearGradient id="dropGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFE66D" />
+                  <stop offset="55%" stop-color="#8CE052" />
+                  <stop offset="100%" stop-color="#2BB673" />
+                </linearGradient>
+              </defs>
+              <path d="M32 6 C32 6 12 28 12 42 C12 53 21 60 32 60 C43 60 52 53 52 42 C52 28 32 6 32 6 Z" fill="url(#dropGrad)" stroke="#0E1F16" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M32 22 C27 31 25 38 32 47 C39 38 37
