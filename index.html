@@ -25,7 +25,7 @@
     <div class="topbar-actions">
       <button id="btnOpenChecklist" class="pill-btn pill-cream" type="button">
         <span>Checklist</span>
-        <strong id="checklistCount">0 / 60</strong>
+        <strong id="checklistCount">0 / 66</strong>
       </button>
       <button id="btnOpenBoard" class="pill-btn pill-gold" type="button">
         <span>My Board</span>
@@ -84,7 +84,7 @@
         </div>
       </div>
 
-      <p class="stage-hint">Drag across the holographic perforation strip to unbox a 1-of-1 pin</p>
+      <p class="stage-hint">Swipe or drag across the perforation strip to unbox a 1-of-1 pin</p>
     </section>
 
     <!-- PHASE 2: REVEAL STAGE (FLOATING PIN + EDITORIAL BUBBLE) -->
@@ -101,8 +101,8 @@
 
         <!-- Floating Die-Cut Pin -->
         <div id="floatingPinAnchor" class="floating-pin-anchor">
-          <div id="pinGrabHint" class="grab-badge">Drag pin to mount</div>
-          <div id="floatingPin" class="floating-pin" role="button" tabindex="0" aria-label="Revealed Enamel Pin. Click to animate or drag onto your collector board.">
+          <div id="pinGrabHint" class="grab-badge">Tap to animate • Drag to mount</div>
+          <div id="floatingPin" class="floating-pin" role="button" tabindex="0" aria-label="Revealed Enamel Pin. Tap to animate or drag onto your collector board.">
             <div id="pinShadow" class="pin-shadow"></div>
             <div id="pin3D" class="pin-3d">
               <div id="pinFront" class="pin-face pin-front"></div>
@@ -115,14 +115,14 @@
         <aside id="specBubble" class="spec-bubble" aria-label="Strain Details">
           <div class="bubble-pointer" aria-hidden="true"></div>
           <div class="bubble-top">
-            <span id="specNumber" class="spec-num">#01 / 60</span>
+            <span id="specNumber" class="spec-num">#01 / 66</span>
             <span id="specRarity" class="spec-rarity">Common • Brass Gold</span>
           </div>
           <h1 id="specName" class="spec-name">Pineapple Express</h1>
           <p id="specTagline" class="spec-tagline">Art-Deco tropical locomotive with billowing enamel steam.</p>
 
           <div class="spec-section">
-            <span class="spec-label">DOMINANT TERPENES</span>
+            <span id="specTerpLabel" class="spec-label">DOMINANT TERPENES</span>
             <div id="specTerpenes" class="terp-pills"></div>
           </div>
 
@@ -157,7 +157,7 @@
       <div class="modal-header">
         <div>
           <h2 id="boardModalTitle">Collector’s Corkboard</h2>
-          <p id="boardModalSub">Drop your pin anywhere on the cork • Click mounted pins to animate</p>
+          <p id="boardModalSub">Drop your pin anywhere on the cork • Tap mounted pins to animate</p>
         </div>
         <div class="modal-header-actions">
           <button id="btnBoardTearAnother" class="pill-btn pill-gold" type="button">Tear Another Bag</button>
@@ -176,7 +176,7 @@
         </div>
 
         <div id="boardEmptyState" class="board-empty">
-          Tear open a holographic bag and drag your 1-of-1 strain pin onto the corkboard.
+          Tear open a holographic bag and drag your 1-of-1 pin onto the corkboard.
         </div>
 
         <div id="mountedPinsLayer" class="mounted-pins-layer"></div>
@@ -184,13 +184,13 @@
     </div>
   </div>
 
-  <!-- 60-STRAIN COLLECTOR'S CHECKLIST MODAL -->
+  <!-- MASTER COLLECTOR'S CHECKLIST MODAL -->
   <div id="checklistModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="checklistTitle">
     <div class="checklist-modal">
       <div class="modal-header">
         <div>
           <h2 id="checklistTitle">Series 01 Master Checklist</h2>
-          <p id="checklistProgressText">0 of 60 Botanical Pins Unlocked</p>
+          <p id="checklistProgressText">0 of 66 Botanical Pins Unlocked</p>
         </div>
         <button id="btnCloseChecklist" class="close-btn" type="button" aria-label="Close checklist">✕</button>
       </div>
@@ -200,8 +200,9 @@
       </div>
 
       <div class="filter-bar" role="tablist">
-        <button class="filter-chip active" data-filter="all" type="button">All (60)</button>
+        <button class="filter-chip active" data-filter="all" type="button">All (66)</button>
         <button class="filter-chip" data-filter="unlocked" type="button">Unlocked</button>
+        <button class="filter-chip" data-filter="terpenes" type="button">Terpenes</button>
         <button class="filter-chip" data-filter="missing" type="button">Missing</button>
       </div>
 
@@ -212,6 +213,7 @@
   <!-- Data & Wave Modules -->
   <script src="data/roster.js"></script>
   <script src="data/wave1.js"></script>
+  <script src="data/terpenes.js"></script>
   <!-- Future waves drop right in here:
   <script src="data/wave2.js"></script>
   <script src="data/wave3.js"></script>
