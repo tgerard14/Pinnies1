@@ -32,7 +32,6 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Sun-Drenched Botanical Backdrop */
 .studio-bg {
   position: fixed;
   inset: 0;
@@ -71,7 +70,7 @@ html, body {
   background-size: 28px 28px;
 }
 
-/* Streamlined Top Banner */
+/* Top Banner */
 .topbar {
   position: relative;
   z-index: 20;
@@ -130,33 +129,11 @@ html, body {
   transition: transform 0.14s ease, box-shadow 0.14s ease;
 }
 
-.pill-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 0 var(--ink);
-}
-
-.pill-btn:active {
-  transform: translateY(2px);
-  box-shadow: 0 2px 0 var(--ink);
-}
-
-.pill-cream {
-  background: var(--cream);
-  color: var(--ink);
-}
-
-.pill-gold {
-  background: var(--gold);
-  color: var(--ink);
-}
-
-.pill-btn strong {
-  background: var(--ink);
-  color: var(--cream);
-  padding: 2px 8px;
-  border-radius: 999px;
-  font-size: 0.78rem;
-}
+.pill-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 0 var(--ink); }
+.pill-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--ink); }
+.pill-cream { background: var(--cream); color: var(--ink); }
+.pill-gold { background: var(--gold); color: var(--ink); }
+.pill-btn strong { background: var(--ink); color: var(--cream); padding: 2px 8px; border-radius: 999px; font-size: 0.78rem; }
 
 /* Main Stage */
 .stage {
@@ -172,9 +149,7 @@ html, body {
   justify-content: center;
 }
 
-.hidden {
-  display: none !important;
-}
+.hidden { display: none !important; }
 
 /* PHASE 1: DIE-CUT HOLO FOIL BLIND BAG */
 .bag-stage {
@@ -230,41 +205,36 @@ html, body {
   z-index: 4;
 }
 
-/* Perforated Tear Strip */
+/* Mobile-Friendly Perforated Tear Strip */
 .tear-strip {
   position: relative;
   z-index: 12;
-  height: 44px;
-  margin-inline: -6px;
+  height: 48px;
+  margin-inline: -8px;
   background: var(--ink);
   border-radius: 999px;
   padding: 4px;
   display: flex;
   align-items: center;
   cursor: grab;
+  touch-action: none;
+  -webkit-touch-callout: none;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
 }
 
-.tear-strip:active {
-  cursor: grabbing;
-}
+.tear-strip:active { cursor: grabbing; }
 
 .tear-track {
   position: relative;
   width: 100%;
   height: 100%;
   border-radius: 999px;
-  background: repeating-linear-gradient(
-    90deg,
-    #234733 0px,
-    #234733 10px,
-    #173123 10px,
-    #173123 16px
-  );
+  background: repeating-linear-gradient(90deg, #234733 0px, #234733 10px, #173123 10px, #173123 16px);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 
 .tear-fill {
@@ -283,7 +253,7 @@ html, body {
   font-weight: 800;
   letter-spacing: 0.11em;
   color: var(--cream);
-  padding-left: 28px;
+  padding-left: 32px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
@@ -291,19 +261,19 @@ html, body {
   position: absolute;
   left: 6px;
   top: 4px;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: var(--gold-bright);
   color: var(--ink);
   border: 2.5px solid var(--ink);
   display: grid;
   place-items: center;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 800;
   z-index: 4;
+  touch-action: none;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
-  transition: transform 0.1s ease;
 }
 
 /* Pouch Body */
@@ -322,26 +292,12 @@ html, body {
   padding: 20px;
 }
 
-/* Multi-Layer Holographic Foil Shader */
 .holo-foil {
   position: absolute;
   inset: 0;
   background:
-    conic-gradient(
-      from var(--holo-angle) at var(--glare-x) var(--glare-y),
-      #7ef29d,
-      #ffe66d,
-      #ff8cc6,
-      #70e1f5,
-      #b8f26b,
-      #7ef29d
-    ),
-    repeating-linear-gradient(
-      -35deg,
-      rgba(255, 255, 255, 0.24) 0px,
-      rgba(255, 255, 255, 0.02) 6px,
-      rgba(14, 31, 22, 0.08) 12px
-    );
+    conic-gradient(from var(--holo-angle) at var(--glare-x) var(--glare-y), #7ef29d, #ffe66d, #ff8cc6, #70e1f5, #b8f26b, #7ef29d),
+    repeating-linear-gradient(-35deg, rgba(255, 255, 255, 0.24) 0px, rgba(255, 255, 255, 0.02) 6px, rgba(14, 31, 22, 0.08) 12px);
   background-blend-mode: screen, overlay;
   opacity: 0.92;
   pointer-events: none;
@@ -350,33 +306,15 @@ html, body {
 .holo-glare {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at var(--glare-x) var(--glare-y),
-    rgba(255, 255, 255, 0.78) 0%,
-    rgba(255, 255, 255, 0.22) 28%,
-    transparent 62%
-  );
+  background: radial-gradient(circle at var(--glare-x) var(--glare-y), rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.22) 28%, transparent 62%);
   mix-blend-mode: overlay;
   pointer-events: none;
 }
 
-.crimp-side {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 14px;
-  background: repeating-linear-gradient(0deg, rgba(14, 31, 22, 0.2) 0 4px, transparent 4px 8px);
-}
+.crimp-side { position: absolute; top: 0; bottom: 0; width: 14px; background: repeating-linear-gradient(0deg, rgba(14, 31, 22, 0.2) 0 4px, transparent 4px 8px); }
 .crimp-left { left: 0; }
 .crimp-right { right: 0; }
-
-.crimp-bottom {
-  position: absolute;
-  bottom: 0;
-  inset-inline: 0;
-  height: 16px;
-  background: repeating-linear-gradient(90deg, rgba(14, 31, 22, 0.22) 0 4px, transparent 4px 8px);
-}
+.crimp-bottom { position: absolute; bottom: 0; inset-inline: 0; height: 16px; background: repeating-linear-gradient(90deg, rgba(14, 31, 22, 0.22) 0 4px, transparent 4px 8px); }
 
 .pouch-emblem {
   position: relative;
@@ -432,12 +370,7 @@ html, body {
   gap: 24px;
 }
 
-.burst-layer {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 30;
-}
+.burst-layer { position: fixed; inset: 0; pointer-events: none; z-index: 30; }
 
 .sparkle-particle {
   position: absolute;
@@ -449,14 +382,8 @@ html, body {
 }
 
 @keyframes burstOut {
-  0% {
-    transform: translate(-50%, -50%) scale(0.4) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.1) rotate(220deg);
-    opacity: 0;
-  }
+  0% { transform: translate(-50%, -50%) scale(0.4) rotate(0deg); opacity: 1; }
+  100% { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.1) rotate(220deg); opacity: 0; }
 }
 
 .reveal-workspace {
@@ -472,7 +399,6 @@ html, body {
   padding-top: 16px;
 }
 
-/* Torn Pouch Remnant at Bottom Left */
 .torn-base {
   position: absolute;
   bottom: -14px;
@@ -491,22 +417,15 @@ html, body {
 }
 
 @keyframes pouchSink {
-  0% {
-    transform: translateY(-40px) scale(1.15) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0) scale(1) rotate(-8deg);
-    opacity: 0.92;
-  }
+  0% { transform: translateY(-40px) scale(1.15) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(0) scale(1) rotate(-8deg); opacity: 0.92; }
 }
 
 .jagged-lip {
   position: relative;
   z-index: 3;
   height: 14px;
-  background: linear-gradient(135deg, var(--bg-mid) 25%, transparent 25%) -10px 0,
-              linear-gradient(225deg, var(--bg-mid) 25%, transparent 25%) -10px 0;
+  background: linear-gradient(135deg, var(--bg-mid) 25%, transparent 25%) -10px 0, linear-gradient(225deg, var(--bg-mid) 25%, transparent 25%) -10px 0;
   background-size: 20px 20px;
 }
 
@@ -521,7 +440,6 @@ html, body {
   -webkit-text-stroke: 1.5px var(--ink);
 }
 
-/* Pure Floating Die-Cut Enamel Pin */
 .floating-pin-anchor {
   position: relative;
   width: 270px;
@@ -533,18 +451,9 @@ html, body {
 }
 
 @keyframes pullFromBag {
-  0% {
-    transform: translate(-90px, 150px) scale(0.45) rotate(-14deg);
-    opacity: 0;
-  }
-  65% {
-    transform: translate(0, -14px) scale(1.04) rotate(2deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    opacity: 1;
-  }
+  0% { transform: translate(-90px, 150px) scale(0.45) rotate(-14deg); opacity: 0; }
+  65% { transform: translate(0, -14px) scale(1.04) rotate(2deg); opacity: 1; }
+  100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 1; }
 }
 
 .grab-badge {
@@ -571,9 +480,7 @@ html, body {
   transform-style: preserve-3d;
 }
 
-.floating-pin:active {
-  cursor: grabbing;
-}
+.floating-pin:active { cursor: grabbing; }
 
 .pin-shadow {
   position: absolute;
@@ -610,22 +517,11 @@ html, body {
   filter: drop-shadow(0 5px 0 rgba(14, 31, 22, 0.65)) drop-shadow(0 12px 18px rgba(0, 0, 0, 0.35));
 }
 
-.pin-back {
-  transform: rotateY(180deg);
-}
+.pin-back { transform: rotateY(180deg); }
+.pin-face svg { width: 100%; height: 100%; overflow: visible; }
+.uv-active .pin-front svg { filter: saturate(1.45) brightness(1.12) drop-shadow(0 0 14px rgba(132, 255, 89, 0.85)); }
 
-.pin-face svg {
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-/* UV Blacklight Glow State */
-.uv-active .pin-front svg {
-  filter: saturate(1.45) brightness(1.12) drop-shadow(0 0 14px rgba(132, 255, 89, 0.85));
-}
-
-/* Separate Buttercream Editorial Spec Bubble */
+/* Spec Bubble */
 .spec-bubble {
   position: relative;
   width: 340px;
@@ -640,14 +536,8 @@ html, body {
 }
 
 @keyframes bubblePop {
-  0% {
-    transform: translateX(-18px) scale(0.92);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0) scale(1);
-    opacity: 1;
-  }
+  0% { transform: translateX(-18px) scale(0.92); opacity: 0; }
+  100% { transform: translateX(0) scale(1); opacity: 1; }
 }
 
 .bubble-pointer {
@@ -662,26 +552,10 @@ html, body {
   transform: translateY(-50%) rotate(45deg);
 }
 
-@media (max-width: 720px) {
-  .bubble-pointer {
-    display: none;
-  }
-}
+@media (max-width: 720px) { .bubble-pointer { display: none; } }
 
-.bubble-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-
-.spec-num {
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: #466352;
-}
+.bubble-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.spec-num { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; color: #466352; }
 
 .spec-rarity {
   font-size: 0.74rem;
@@ -695,62 +569,17 @@ html, body {
 
 .spec-rarity.rarity-uncommon { background: #b8e0d2; }
 .spec-rarity.rarity-rare { background: #ffcad4; }
-.spec-rarity.rarity-chase {
-  background: linear-gradient(90deg, #ffe66d, #8ce052, #70e1f5, #ff8cc6);
-}
+.spec-rarity.rarity-double-rare { background: linear-gradient(90deg, #bae6fd, #e9d5ff, #fde68a); }
+.spec-rarity.rarity-chase { background: linear-gradient(90deg, #ffe66d, #8ce052, #70e1f5, #ff8cc6); }
 
-.spec-name {
-  margin: 0 0 6px;
-  font-family: "Fredoka", cursive, sans-serif;
-  font-size: 1.65rem;
-  line-height: 1.1;
-  color: var(--ink);
-}
+.spec-name { margin: 0 0 6px; font-family: "Fredoka", cursive, sans-serif; font-size: 1.65rem; line-height: 1.1; color: var(--ink); }
+.spec-tagline { margin: 0 0 14px; font-size: 0.86rem; line-height: 1.4; color: #365242; font-weight: 600; }
+.spec-section { margin-bottom: 16px; }
+.spec-label { display: block; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.1em; color: #547361; margin-bottom: 6px; }
+.terp-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.terp-pill { background: var(--lime); color: var(--lime-ink); border: 2px solid var(--ink); border-radius: 999px; padding: 4px 11px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
 
-.spec-tagline {
-  margin: 0 0 14px;
-  font-size: 0.86rem;
-  line-height: 1.4;
-  color: #365242;
-  font-weight: 600;
-}
-
-.spec-section {
-  margin-bottom: 16px;
-}
-
-.spec-label {
-  display: block;
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: #547361;
-  margin-bottom: 6px;
-}
-
-.terp-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.terp-pill {
-  background: var(--lime);
-  color: var(--lime-ink);
-  border: 2px solid var(--ink);
-  border-radius: 999px;
-  padding: 4px 11px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.bubble-actions {
-  display: grid;
-  grid-template-columns: 1.25fr 1fr 1fr;
-  gap: 8px;
-}
+.bubble-actions { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 8px; }
 
 .action-btn {
   padding: 9px 10px;
@@ -766,25 +595,11 @@ html, body {
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
-.action-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 0 var(--ink);
-}
+.action-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--ink); }
+.action-btn:active { transform: translateY(1px); box-shadow: 0 2px 0 var(--ink); }
+.action-animate { background: var(--gold-bright); }
+.action-btn.active { background: #8ce052; }
 
-.action-btn:active {
-  transform: translateY(1px);
-  box-shadow: 0 2px 0 var(--ink);
-}
-
-.action-animate {
-  background: var(--gold-bright);
-}
-
-.action-btn.active {
-  background: #8ce052;
-}
-
-/* Bottom Stage Bar */
 .bottom-bar {
   width: 100%;
   max-width: 720px;
@@ -800,11 +615,7 @@ html, body {
   backdrop-filter: blur(8px);
 }
 
-.drag-instruction {
-  font-size: 0.86rem;
-  font-weight: 700;
-  color: var(--cream);
-}
+.drag-instruction { font-size: 0.86rem; font-weight: 700; color: var(--cream); }
 
 .tear-another-btn {
   padding: 10px 18px;
@@ -819,11 +630,8 @@ html, body {
   box-shadow: 0 3px 0 var(--ink);
 }
 
-.tear-another-btn:hover {
-  background: #38cc84;
-}
+.tear-another-btn:hover { background: #38cc84; }
 
-/* Drag Ghost */
 .drag-ghost {
   position: fixed;
   width: 130px;
@@ -834,7 +642,7 @@ html, body {
   filter: drop-shadow(0 16px 20px rgba(0, 0, 0, 0.55));
 }
 
-/* Modals (Corkboard Overlay + Checklist) */
+/* Modals */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -863,32 +671,10 @@ html, body {
   100% { transform: scale(1) translateY(0); opacity: 1; }
 }
 
-.modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-
-.modal-header h2 {
-  margin: 0;
-  font-family: "Fredoka", cursive, sans-serif;
-  font-size: 1.5rem;
-}
-
-.modal-header p {
-  margin: 2px 0 0;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #466352;
-}
-
-.modal-header-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+.modal-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.modal-header h2 { margin: 0; font-family: "Fredoka", cursive, sans-serif; font-size: 1.5rem; }
+.modal-header p { margin: 2px 0 0; font-size: 0.82rem; font-weight: 600; color: #466352; }
+.modal-header-actions { display: flex; align-items: center; gap: 10px; }
 
 .close-btn {
   width: 38px;
@@ -903,7 +689,6 @@ html, body {
   box-shadow: 0 3px 0 var(--ink);
 }
 
-/* Framed Cork Surface */
 .cork-surface {
   position: relative;
   width: 100%;
@@ -921,18 +706,8 @@ html, body {
   overflow: hidden;
 }
 
-.cork-surface.drop-active {
-  box-shadow: inset 0 0 0 5px var(--gold-bright), inset 0 6px 18px rgba(46, 25, 9, 0.45);
-}
-
-.brass-bracket {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  border: 4px solid var(--gold);
-  z-index: 3;
-  pointer-events: none;
-}
+.cork-surface.drop-active { box-shadow: inset 0 0 0 5px var(--gold-bright), inset 0 6px 18px rgba(46, 25, 9, 0.45); }
+.brass-bracket { position: absolute; width: 24px; height: 24px; border: 4px solid var(--gold); z-index: 3; pointer-events: none; }
 .brass-bracket.tl { top: 8px; left: 8px; border-right: none; border-bottom: none; }
 .brass-bracket.tr { top: 8px; right: 8px; border-left: none; border-bottom: none; }
 .brass-bracket.bl { bottom: 8px; left: 8px; border-right: none; border-top: none; }
@@ -958,23 +733,8 @@ html, body {
   z-index: 25;
 }
 
-.board-empty {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 32px;
-  font-weight: 700;
-  color: rgba(46, 25, 9, 0.72);
-  pointer-events: none;
-}
-
-.mounted-pins-layer {
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-}
+.board-empty { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 32px; font-weight: 700; color: rgba(46, 25, 9, 0.72); pointer-events: none; }
+.mounted-pins-layer { position: absolute; inset: 0; z-index: 10; }
 
 .mounted-pin {
   position: absolute;
@@ -987,15 +747,8 @@ html, body {
   transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.mounted-pin:hover {
-  transform: translate(-50%, -50%) scale(1.07);
-  z-index: 18;
-}
-
-.mounted-pin.just-pinned {
-  animation: pinThud 0.35s cubic-bezier(0.22, 1.4, 0.36, 1);
-}
-
+.mounted-pin:hover { transform: translate(-50%, -50%) scale(1.07); z-index: 18; }
+.mounted-pin.just-pinned { animation: pinThud 0.35s cubic-bezier(0.22, 1.4, 0.36, 1); }
 @keyframes pinThud {
   0% { transform: translate(-50%, -50%) scale(1.32); }
   65% { transform: translate(-50%, -50%) scale(0.92); }
@@ -1019,282 +772,116 @@ html, body {
   cursor: pointer;
 }
 
-.mounted-pin:hover .mounted-pin-remove {
-  display: grid;
-}
+.mounted-pin:hover .mounted-pin-remove { display: grid; }
 
-/* Checklist Modal */
-.checklist-modal {
-  max-height: 86vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.progress-track {
-  width: 100%;
-  height: 14px;
-  background: var(--cream-dark);
-  border: 2.5px solid var(--ink);
-  border-radius: 999px;
-  overflow: hidden;
-  margin-bottom: 12px;
-}
-
-.progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #8ce052, var(--gold));
-  transition: width 0.3s ease;
-}
-
-.filter-bar {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 14px;
-}
-
-.filter-chip {
-  padding: 6px 14px;
-  border-radius: 999px;
-  border: 2px solid var(--ink);
-  background: #ffffff;
-  color: var(--ink);
-  font-family: inherit;
-  font-size: 0.78rem;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.filter-chip.active {
-  background: var(--gold);
-}
-
-.checklist-grid {
-  overflow-y: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
-  padding-right: 4px;
-}
-
-.check-card {
-  border: 2.5px solid var(--ink);
-  border-radius: 16px;
-  padding: 10px;
-  background: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 6px;
-}
-
-.check-card.locked {
-  background: var(--cream-dark);
-  opacity: 0.76;
-}
-
-.check-thumb {
-  width: 72px;
-  height: 72px;
-  display: grid;
-  place-items: center;
-}
-
-.check-silhouette {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: rgba(14, 31, 22, 0.14);
-  border: 2px dashed rgba(14, 31, 22, 0.35);
-  display: grid;
-  place-items: center;
-  font-weight: 900;
-  font-size: 1.1rem;
-  color: rgba(14, 31, 22, 0.45);
-}
-
-.check-num {
-  font-size: 0.68rem;
-  font-weight: 800;
-  color: #547361;
-}
-
-.check-title {
-  font-size: 0.8rem;
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-.check-badge {
-  font-size: 0.64rem;
-  font-weight: 800;
-  padding: 2px 8px;
-  border-radius: 999px;
-  border: 1.5px solid var(--ink);
-  background: var(--lime);
-}
-
-.check-badge.upcoming {
-  background: #e5e5e5;
-  border-style: dashed;
-}
+.checklist-modal { max-height: 86vh; display: flex; flex-direction: column; }
+.progress-track { width: 100%; height: 14px; background: var(--cream-dark); border: 2.5px solid var(--ink); border-radius: 999px; overflow: hidden; margin-bottom: 12px; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, #8ce052, var(--gold)); transition: width 0.3s ease; }
+.filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.filter-chip { padding: 6px 14px; border-radius: 999px; border: 2px solid var(--ink); background: #ffffff; color: var(--ink); font-family: inherit; font-size: 0.78rem; font-weight: 800; cursor: pointer; }
+.filter-chip.active { background: var(--gold); }
+.checklist-grid { overflow-y: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; padding-right: 4px; }
+.check-card { border: 2.5px solid var(--ink); border-radius: 16px; padding: 10px; background: #ffffff; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+.check-card.locked { background: var(--cream-dark); opacity: 0.76; }
+.check-thumb { width: 72px; height: 72px; display: grid; place-items: center; }
+.check-silhouette { width: 54px; height: 54px; border-radius: 50%; background: rgba(14, 31, 22, 0.14); border: 2px dashed rgba(14, 31, 22, 0.35); display: grid; place-items: center; font-weight: 900; font-size: 1.1rem; color: rgba(14, 31, 22, 0.45); }
+.check-num { font-size: 0.68rem; font-weight: 800; color: #547361; }
+.check-title { font-size: 0.8rem; font-weight: 800; line-height: 1.2; }
+.check-badge { font-size: 0.64rem; font-weight: 800; padding: 2px 8px; border-radius: 999px; border: 1.5px solid var(--ink); background: var(--lime); }
+.check-badge.upcoming { background: #e5e5e5; border-style: dashed; }
 
 /* =========================================================
-   BESPOKE WAVE 1 PIN KINETIC ANIMATIONS (#01 - #10)
+   MULTI-STAGE KINETIC PIN ANIMATIONS (WAVE 1 + TERPENES)
    ========================================================= */
 
-/* #01 Pineapple Express: Spinning wheels + locomotive bounce + billowing steam */
-.anim-train .wheel-spin {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: spin360 0.75s linear 2;
-}
-.anim-train .loco-chassis {
-  animation: trainChug 0.25s ease-in-out 6;
-}
-.anim-train .steam-plume {
-  transform-box: fill-box;
-  transform-origin: bottom center;
-  animation: steamPuff 0.75s ease-out 2;
-}
 @keyframes spin360 { to { transform: rotate(360deg); } }
-@keyframes trainChug {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-}
-@keyframes steamPuff {
-  0%, 100% { transform: scale(1) translateY(0); }
-  50% { transform: scale(1.07) translateY(-5px); }
-}
 
-/* #02 Blue Dream: Swaying star charms + moon halo pulse */
-.anim-dream .dream-charm {
-  transform-box: fill-box;
-  transform-origin: top center;
-  animation: charmSway 0.7s ease-in-out 2;
-}
-.anim-dream .moon-body {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: gentlePulse 0.7s ease-in-out 2;
-}
-@keyframes charmSway {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(12deg); }
-  75% { transform: rotate(-12deg); }
-}
-@keyframes gentlePulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.06); }
-}
+/* #01 Pineapple Express: Wheels spin, chassis chugs, headlamp flashes, smoke rings float up */
+.anim-train .wheel-spin { transform-box: fill-box; transform-origin: center; animation: spin360 0.65s linear 2; }
+.anim-train .loco-chassis { animation: trainChug 0.22s ease-in-out 6; }
+.anim-train .steam-plume { transform-box: fill-box; transform-origin: bottom center; animation: steamPuff 0.65s ease-out 2; }
+.anim-train .steam-ring { animation: ringRise 1.3s ease-out forwards; }
+.anim-train .train-headlamp { animation: lampFlash 0.25s ease-in-out 5; }
+@keyframes trainChug { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-4px) rotate(-1.5deg); } }
+@keyframes steamPuff { 0%, 100% { transform: scale(1) translateY(0); } 50% { transform: scale(1.09) translateY(-6px); } }
+@keyframes ringRise { 0% { transform: translateY(10px) scale(0.7); opacity: 0; } 40% { opacity: 0.95; } 100% { transform: translateY(-28px) scale(1.25); opacity: 0; } }
+@keyframes lampFlash { 0%, 100% { fill: #FFF7AE; } 50% { fill: #FFFFFF; filter: drop-shadow(0 0 8px #FFE66D); } }
 
-/* #03 Sour Diesel: Pumping fuel nozzle + toxic drip bounce */
-.anim-diesel .fuel-nozzle {
-  transform-box: fill-box;
-  transform-origin: left center;
-  animation: nozzlePump 0.35s ease-in-out 4;
-}
-.anim-diesel .acid-drip {
-  animation: dripStretch 0.7s ease-in-out 2;
-}
-@keyframes nozzlePump {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(-14deg); }
-}
-@keyframes dripStretch {
-  0%, 100% { transform: translateY(0) scaleY(1); }
-  50% { transform: translateY(5px) scaleY(1.18); }
-}
+/* #02 Blue Dream: Shooting star streaks across, moon rocks, dangling charms swing */
+.anim-dream .shooting-star { animation: starStreak 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.anim-dream .dream-charm { transform-box: fill-box; transform-origin: top center; animation: charmSway 0.65s ease-in-out 2; }
+.anim-dream .dream-charm-alt { transform-box: fill-box; transform-origin: top center; animation: charmSwayAlt 0.65s ease-in-out 2; }
+.anim-dream .moon-body { transform-box: fill-box; transform-origin: center; animation: moonRock 1.3s ease-in-out; }
+@keyframes starStreak { 0% { transform: translate(35px, -25px) scale(0.4); opacity: 0; } 35% { opacity: 1; } 100% { transform: translate(-95px, 65px) scale(1.1); opacity: 0; } }
+@keyframes charmSway { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(18deg); } 75% { transform: rotate(-16deg); } }
+@keyframes charmSwayAlt { 0%, 100% { transform: rotate(0deg); } 25% { transform: rotate(-16deg); } 75% { transform: rotate(18deg); } }
+@keyframes moonRock { 0%, 100% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(-6deg) scale(1.05); } }
 
-/* #04 Northern Lights: Shimmering aurora sky wave */
-.anim-aurora .aurora-ribbon {
-  animation: auroraWave 0.75s ease-in-out 2;
-}
-@keyframes auroraWave {
-  0%, 100% { transform: skewX(0deg) scaleY(1); filter: brightness(1); }
-  50% { transform: skewX(-6deg) scaleY(1.08); filter: brightness(1.25); }
-}
+/* #03 Sour Diesel: Nozzle pumps, toxic bubbles rise, acid drip stretches, hazard sign rattles */
+.anim-diesel .fuel-nozzle { transform-box: fill-box; transform-origin: left center; animation: nozzlePump 0.32s ease-in-out 4; }
+.anim-diesel .acid-drip { animation: dripStretch 0.65s ease-in-out 2; }
+.anim-diesel .acid-bubbles { animation: bubblesUp 1.3s ease-out forwards; }
+.anim-diesel .diesel-sign { transform-box: fill-box; transform-origin: center; animation: hazardShake 0.22s ease-in-out 5; }
+@keyframes nozzlePump { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-18deg); } }
+@keyframes dripStretch { 0%, 100% { transform: translateY(0) scaleY(1); } 50% { transform: translateY(8px) scaleY(1.28); } }
+@keyframes bubblesUp { 0% { transform: translateY(14px) scale(0.6); opacity: 0; } 40% { opacity: 1; } 100% { transform: translateY(-22px) scale(1.15); opacity: 0; } }
+@keyframes hazardShake { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(-11deg) scale(1.03); } }
 
-/* #05 OG Kush: Lowrider hydraulic bounce + crown glint */
-.anim-og .og-plate {
-  animation: hydroHop 0.38s cubic-bezier(0.22, 1.4, 0.36, 1) 3;
-}
-.anim-og .og-crown {
-  transform-box: fill-box;
-  transform-origin: bottom center;
-  animation: crownTilt 0.38s ease-in-out 3;
-}
-@keyframes hydroHop {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-9px) rotate(-4deg); }
-}
-@keyframes crownTilt {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-13px) rotate(6deg); }
-}
+/* #04 Northern Lights: Dual aurora waves ripple in counter-motion while stars twinkle */
+.anim-aurora .aurora-ribbon { animation: auroraWave 0.75s ease-in-out 2; }
+.anim-aurora .aurora-ribbon-2 { animation: auroraWaveAlt 0.75s ease-in-out 2; }
+.anim-aurora .aurora-stars { animation: starTwinkle 0.45s ease-in-out 3; }
+@keyframes auroraWave { 0%, 100% { transform: skewX(0deg) scaleY(1); filter: brightness(1); } 50% { transform: skewX(-8deg) scaleY(1.12); filter: brightness(1.3); } }
+@keyframes auroraWaveAlt { 0%, 100% { transform: skewX(0deg) scaleY(1); } 50% { transform: skewX(8deg) scaleY(1.1); } }
+@keyframes starTwinkle { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
 
-/* #06 Granddaddy Purple: Cozy armchair recline + floating Zzzs */
-.anim-gdp .gdp-chair {
-  transform-box: fill-box;
-  transform-origin: bottom center;
-  animation: chairRock 0.75s ease-in-out 2;
-}
-.anim-gdp .gdp-zzz {
-  animation: zzzFloat 1.4s ease-out forwards;
-}
-@keyframes chairRock {
-  0%, 100% { transform: rotate(0deg); }
-  35% { transform: rotate(-7deg); }
-  70% { transform: rotate(5deg); }
-}
-@keyframes zzzFloat {
-  0% { transform: translateY(0) scale(0.9); opacity: 1; }
-  100% { transform: translateY(-14px) scale(1.15); opacity: 0.4; }
-}
+/* #05 OG Kush: Lowrider hydraulic 3-wheel hop with crown airtime & flashing bolts */
+.anim-og .og-plate { transform-box: fill-box; transform-origin: bottom left; animation: hydroHop 0.42s cubic-bezier(0.22, 1.4, 0.36, 1) 3; }
+.anim-og .og-crown { transform-box: fill-box; transform-origin: bottom center; animation: crownTilt 0.42s ease-in-out 3; }
+.anim-og .og-bolt { animation: lampFlash 0.25s ease-in-out 5; }
+@keyframes hydroHop { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-12px) rotate(-6deg); } }
+@keyframes crownTilt { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-18px) rotate(9deg); } }
 
-/* #07 Gelato: Spinning cherry topper + scoop wiggle */
-.anim-gelato .gelato-cherry {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: spin360 0.7s ease-in-out 2;
-}
-.anim-gelato .gelato-scoop {
-  transform-box: fill-box;
-  transform-origin: bottom center;
-  animation: gentlePulse 0.45s ease-in-out 3;
-}
+/* #06 Granddaddy Purple: Recliner leans back, grapes jiggle, Zzzs float upward */
+.anim-gdp .gdp-chair { transform-box: fill-box; transform-origin: bottom center; animation: chairRock 0.75s ease-in-out 2; }
+.anim-gdp .gdp-grapes { transform-box: fill-box; transform-origin: top center; animation: grapeJiggle 0.35s ease-in-out 4; }
+.anim-gdp .gdp-zzz { animation: zzzFloat 1.4s ease-out forwards; }
+@keyframes chairRock { 0%, 100% { transform: rotate(0deg); } 35% { transform: rotate(-9deg); } 70% { transform: rotate(5deg); } }
+@keyframes grapeJiggle { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(8deg); } }
+@keyframes zzzFloat { 0% { transform: translateY(4px) scale(0.85); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateY(-18px) scale(1.2); opacity: 0; } }
 
-/* #08 Wedding Cake: Crackling gold sparkler burst */
-.anim-cake .cake-spark {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: sparkCrack 0.25s ease-in-out 6;
-}
-@keyframes sparkCrack {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.35) rotate(25deg); }
-}
+/* #07 Gelato: Cherry twirls, scoops squish-bounce, pastel drip stretches */
+.anim-gelato .gelato-cherry { transform-box: fill-box; transform-origin: center; animation: spin360 0.65s ease-in-out 2; }
+.anim-gelato .gelato-scoop { transform-box: fill-box; transform-origin: bottom center; animation: scoopSquish 0.42s ease-in-out 3; }
+.anim-gelato .gelato-drip { animation: dripStretch 0.65s ease-in-out 2; }
+@keyframes scoopSquish { 0%, 100% { transform: scale(1, 1); } 50% { transform: scale(1.07, 0.94); } }
 
-/* #09 Jack Herer: Spinning brass compass needle */
-.anim-compass .compass-needle {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: compassSpin 1.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-}
-@keyframes compassSpin {
-  0% { transform: rotate(0deg); }
-  65% { transform: rotate(405deg); }
-  100% { transform: rotate(360deg); }
-}
+/* #08 Wedding Cake: Sparkler bursts & rotates while cake tiers do a celebratory bounce */
+.anim-cake .cake-spark { transform-box: fill-box; transform-origin: center; animation: sparkCrack 0.22s ease-in-out 6; }
+.anim-cake .cake-tiers { transform-box: fill-box; transform-origin: bottom center; animation: scoopSquish 0.42s ease-in-out 3; }
+@keyframes sparkCrack { 0%, 100% { transform: scale(1) rotate(0deg); } 50% { transform: scale(1.45) rotate(30deg); } }
 
-/* #10 Girl Scout Cookies: Joyful cookie wiggle + mint sparkle */
-.anim-gsc .gsc-cookie {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: cookieWiggle 0.45s ease-in-out 3;
-}
-@keyframes cookieWiggle {
-  0%, 100% { transform: rotate(0deg) scale(1); }
-  25% { transform: rotate(-10deg) scale(1.05); }
-  75% { transform: rotate(10deg) scale(1.05); }
-}
+/* #09 Jack Herer: Magnetic needle spins 360° with realistic north-seeking oscillation */
+.anim-compass .compass-needle { transform-box: fill-box; transform-origin: center; animation: compassSpin 1.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+@keyframes compassSpin { 0% { transform: rotate(0deg); } 65% { transform: rotate(415deg); } 82% { transform: rotate(342deg); } 100% { transform: rotate(360deg); } }
+
+/* #10 Girl Scout Cookies: Cookie twists with a bite crunch as crumbs scatter outward */
+.anim-gsc .gsc-cookie { transform-box: fill-box; transform-origin: center; animation: cookieWiggle 0.4s ease-in-out 3; }
+.anim-gsc .gsc-crumbs { animation: crumbPop 1.1s ease-out forwards; }
+@keyframes cookieWiggle { 0%, 100% { transform: rotate(0deg) scale(1); } 25% { transform: rotate(-12deg) scale(1.06); } 75% { transform: rotate(12deg) scale(1.06); } }
+@keyframes crumbPop { 0% { transform: translate(-10px, 10px) scale(0.5); opacity: 0; } 30% { opacity: 1; } 100% { transform: translate(16px, -18px) scale(1.2); opacity: 0; } }
+
+/* Terpene Vault Animations (T1 - T6) */
+.anim-terp-myrcene .terp-rings { transform-box: fill-box; transform-origin: center; animation: spin360 1.4s linear forwards; }
+.anim-terp-myrcene .terp-orbit { transform-box: fill-box; transform-origin: center; animation: scoopSquish 0.45s ease-in-out 3; }
+
+.anim-terp-limonene .citrus-wheel { transform-box: fill-box; transform-origin: center; animation: spin360 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.anim-terp-limonene .zest-sparks { animation: sparkCrack 0.3s ease-in-out 4; }
+
+.anim-terp-caryo .spice-burst { transform-box: fill-box; transform-origin: center; animation: sparkCrack 0.32s ease-in-out 4; }
+
+.anim-terp-pinene .pine-sway { transform-box: fill-box; transform-origin: bottom center; animation: charmSway 0.65s ease-in-out 2; }
+
+.anim-terp-terpinolene .kaleido-spin { transform-box: fill-box; transform-origin: center; animation: spin360 1.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+
+.anim-terp-linalool .lavender-mist { transform-box: fill-box; transform-origin: bottom center; animation: moonRock 1.3s ease-in-out; }
