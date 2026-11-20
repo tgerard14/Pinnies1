@@ -11,6 +11,14 @@ window.PINNIES_ROSTER = [
   { id: "jack-herer", num: "09", wave: 1, name: "Jack Herer", rarity: "Uncommon", terpenes: ["Terpinolene", "Pinene"], tagline: "Engraved brass pocket compass with a spinning magnetic needle." },
   { id: "girl-scout-cookies", num: "10", wave: 1, name: "Girl Scout Cookies", rarity: "Chase", terpenes: ["Caryophyllene", "Limonene"], tagline: "Mint-chocolate trefoil cookie with a fresh bite & gold foil trim." },
 
+  // MAJOR TERPENE SERIES (T1 - T6) — Active Rare & Double Rare Pins
+  { id: "terp-myrcene", num: "T1", wave: 1, category: "terpene", name: "Myrcene", rarity: "Rare", terpenes: ["Mango", "Hops", "Lemongrass"], tagline: "Crystalline terpene droplet cradling a ripe Alphonso mango & hop cone." },
+  { id: "terp-limonene", num: "T2", wave: 1, category: "terpene", name: "Limonene", rarity: "Rare", terpenes: ["Citrus Peel", "Bergamot", "Yuzu"], tagline: "Sunburst Meyer lemon wheel with orbiting zesty citrus sparks." },
+  { id: "terp-caryophyllene", num: "T3", wave: 1, category: "terpene", name: "Caryophyllene", rarity: "Rare", terpenes: ["Black Pepper", "Clove", "Cinnamon"], tagline: "Cracked Tellicherry peppercorn & warm clove spice emblem." },
+  { id: "terp-pinene", num: "T4", wave: 1, category: "terpene", name: "Pinene", rarity: "Double Rare", terpenes: ["Ponderosa Pine", "Rosemary", "Basil"], tagline: "Holographic platinum compass framing a towering alpine Douglas fir." },
+  { id: "terp-terpinolene", num: "T5", wave: 1, category: "terpene", name: "Terpinolene", rarity: "Double Rare", terpenes: ["Lilac", "Nutmeg", "Sweet Apple"], tagline: "Iridescent botanical kaleidoscope bursting with lilac & apple blossoms." },
+  { id: "terp-linalool", num: "T6", wave: 1, category: "terpene", name: "Linalool", rarity: "Double Rare", terpenes: ["French Lavender", "Coriander", "Sweet Basil"], tagline: "Anodized violet apothecary vial diffusing tranquil lavender mist." },
+
   // WAVE 2 (#11 - #20)
   { id: "permanent-marker", num: "11", wave: 2, name: "Permanent Marker", rarity: "Rare", terpenes: ["Myrcene", "Limonene"], tagline: "Chisel-tip street marker uncapped over a glossy ink splash." },
   { id: "super-boof", num: "12", wave: 2, name: "Super Boof", rarity: "Uncommon", terpenes: ["Myrcene", "Caryophyllene"], tagline: "Comic-book starburst impact & vintage golden boxing glove." },
